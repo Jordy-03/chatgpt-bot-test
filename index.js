@@ -1,18 +1,17 @@
-import { Configuration, OpenAIApi } from 'openai';
-import dotenv from 'dotenv';
-dotenv.config();
+import { OpenAI } from "openai";
+const client = new OpenAI();
 
-const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
+const stream = await client.responses.create({
+    model: "gpt-3.5-turbo",
+    input: [
+        {
+            role: "user",
+            content: "Say 'double bubble bath' ten times fast.",
+        },
+    ],
+    stream: true,
 });
 
-const openai = new OpenAIApi(configuration);
-
-async function main() {
-    const chatCompletion = await openai.createChatCompletion({
-        model: 'gpt-3.5-turbo',
-        messages: [{ role: 'user', content: 'Hello!' }],
-    })
+for await (const event of stream) {
+    console.log(event);
 }
-
-main();
