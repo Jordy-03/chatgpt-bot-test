@@ -1,0 +1,29 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "Chatbot powered by ChatGPT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jordy-03/chatgpt-bot-test.git"
+  },
+  "keywords": [
+    "Jordy",
+    "R."
+  ],
+  "author": "Jordy R.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jordy-03/chatgpt-bot-test/issues"
+  },
+  "homepage": "https://github.com/Jordy-03/chatgpt-bot-test#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.7",
+    "openai": "^4.91.0",
+    "readline-sync": "^1.4.10"
+  }
+}
